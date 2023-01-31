@@ -1,0 +1,110 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "4ce329459a76e641c8e9572802138ed2",
+    "packages": [
+        {
+            "name": "wsdltophp/wssecurity",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WsdlToPhp/WsSecurity.git",
+                "reference": "a01f4fb7758cca1f3d1d6523b515f9c9fe1dfad9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WsdlToPhp/WsSecurity/zipball/a01f4fb7758cca1f3d1d6523b515f9c9fe1dfad9",
+                "reference": "a01f4fb7758cca1f3d1d6523b515f9c9fe1dfad9",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-soap": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpstan/phpstan": "^1.4",
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WsdlToPhp\\WsSecurity\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikaël DELSOL",
+                    "email": "contact@wsdltophp.com",
+                    "homepage": "https://www.wsdltophp.com",
+                    "role": "Owner"
+                },
+                {
+                    "name": "Alexey Anisimov",
+                    "email": "mne@lexa.in",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "Tom Vaughan",
+                    "email": "tom.vaughan@farpoint.com",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "NtlBldrv",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "baijunyao",
+                    "email": "baijunyao@baijunyao.com",
+                    "role": "Contributor"
+                },
+                {
+                    "name": "liquid207",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "Allows to easily add Ws Security header to a SOAP Request",
+            "keywords": [
+                "php",
+                "soap",
+                "wsse"
+            ],
+            "support": {
+                "email": "contact@wsdltophp.com",
+                "issues": "https://github.com/WsdlToPhp/WsSecurity/issues",
+                "source": "https://github.com/WsdlToPhp/WsSecurity/tree/2.0.5"
+            },
+            "time": "2022-05-05T19:25:19+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.4.3",
+        "ext-libxml": "*",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "ext-soap": "*",
+        "ext-openssl": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
