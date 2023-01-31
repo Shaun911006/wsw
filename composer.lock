@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ce329459a76e641c8e9572802138ed2",
+    "content-hash": "533fdc90644e5fe827894011726fdea3",
     "packages": [
         {
             "name": "wsdltophp/wssecurity",
