@@ -24,6 +24,7 @@ try {
         'log'                      => '',
         'member_business_location' => '',
         'member_business_scope'    => '',
+        'client_num'               => '' //客户端编号 11位
     ];
 
     $code = 4; //顺序号
@@ -54,7 +55,7 @@ try {
     $memberAddRes = $wsw->hyxxbg($code++, $sessionId, [$member->toArray()]);
     var_export($memberAddRes);
     //查询会员
-    $memberDetail = $wsw->cxhymxxx($code++, $sessionId, '杨某某', '131025111111111111');
+    $memberDetail = $wsw->cxhymxxx($code++, $sessionId, '杨某某', '131025111111111111',1,20);
     var_export($memberDetail);
 
 } catch (\Exception $e) {

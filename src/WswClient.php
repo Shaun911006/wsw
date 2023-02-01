@@ -31,7 +31,8 @@ class WswClient
         'yhm'        => '',
         'mm'         => '',
         'bsrysfjzhm' => '',    //办税人员身份证号码
-        'log'        => false
+        'log'        => false,
+        'client_num' => '11111111111' //客户端编号11位
     ];
 
     /**
@@ -150,7 +151,7 @@ class WswClient
         $bizXml = $biz->autoSet()
             ->setServiceId(WswClient::DOLOGIN)
             ->setNsrsbh($this->conf['nsrsbh'])
-            ->setTranSeq($this->conf['username'] . '11111111111' . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
+            ->setTranSeq($this->conf['username'] . $this->conf['client_num'] . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
             ->setContent(base64_encode($content))
             ->buildXml();
 
@@ -180,7 +181,7 @@ class WswClient
             ->setSessionId($sessionid)
             ->setServiceId(WswClient::CHOOSEBSZT)
             ->setNsrsbh($this->conf['nsrsbh'])
-            ->setTranSeq($this->conf['username'] . '11111111111' . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
+            ->setTranSeq($this->conf['username'] . $this->conf['client_num'] . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
             ->setContent(base64_encode($content))
             ->buildXml();
 
@@ -210,7 +211,7 @@ class WswClient
             ->setSessionId($sessionid)
             ->setServiceId(WswClient::CHOOSEBSRY)
             ->setNsrsbh($this->conf['nsrsbh'])
-            ->setTranSeq($this->conf['username'] . '11111111111' . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
+            ->setTranSeq($this->conf['username'] . $this->conf['client_num'] . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
             ->setContent(base64_encode($content))
             ->buildXml();
 
@@ -235,7 +236,7 @@ class WswClient
             ->setSessionId($sessionid)
             ->setServiceId(WswClient::CXPTQYSQXX)
             ->setNsrsbh($this->conf['nsrsbh'])
-            ->setTranSeq($this->conf['username'] . '11111111111' . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
+            ->setTranSeq($this->conf['username'] . $this->conf['client_num'] . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
             ->setContent(base64_encode($content))
             ->buildXml();
 
@@ -264,7 +265,7 @@ class WswClient
             ->setSessionId($sessionid)
             ->setServiceId(WswClient::HYXXBG)
             ->setNsrsbh($this->conf['nsrsbh'])
-            ->setTranSeq($this->conf['username'] . '11111111111' . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
+            ->setTranSeq($this->conf['username'] . $this->conf['client_num'] . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
             ->setContent(base64_encode($content))
             ->buildXml();
 
@@ -281,12 +282,12 @@ class WswClient
      * @return array 会员登记明细 ["count"=>1,"data" = [[...]]]
      * @throws WswException
      */
-    public function cxhymxxx(string $code, string $sessionid, string $name, string $idCardNum): array
+    public function cxhymxxx(string $code, string $sessionid, string $name, string $idCardNum,$page = 1,$limit = 20): array
     {
         $content = json_encode([
             'sessionid' => $sessionid,
-            'page'      => '1',
-            'limit'     => '20',
+            'page'      => $page,
+            'limit'     => $limit,
             'hySfmc'    => $name,
             'hySfzjhm'  => $idCardNum,
         ]);
@@ -296,7 +297,7 @@ class WswClient
             ->setSessionId($sessionid)
             ->setServiceId(WswClient::CXHYMXXX)
             ->setNsrsbh($this->conf['nsrsbh'])
-            ->setTranSeq($this->conf['username'] . '11111111111' . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
+            ->setTranSeq($this->conf['username'] . $this->conf['client_num'] . '00000' . date('Ymd') . str_pad($code, 8, '0', STR_PAD_LEFT))  //交易流水号为36位长字符串，编码规则为：4位厂商简码 + 11位客户端编号（任意11字字节字符串） + “00000” + 4位年 + 2位月 + 2位日 + 8位顺序号 共36位。
             ->setContent(base64_encode($content))
             ->buildXml();
 
