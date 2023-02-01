@@ -32,6 +32,7 @@ class WswClient
         'mm'         => '',
         'bsrysfjzhm' => '',    //办税人员身份证号码
         'log'        => false,
+        'log_f_path' => '',    //日志文件路径配置 wsw_log文件夹的父目录
         'client_num' => '11111111111' //客户端编号11位
     ];
 
