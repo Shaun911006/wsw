@@ -283,7 +283,7 @@ class WswClient
      * @return array 会员登记明细 ["count"=>1,"data" = [[...]]]
      * @throws WswException
      */
-    public function cxhymxxx(string $code, string $sessionid, string $name, string $idCardNum,$page = 1,$limit = 20): array
+    public function cxhymxxx(string $code, string $sessionid, string $name, string $idCardNum, $page = 1, $limit = 20): array
     {
         $content = json_encode([
             'sessionid' => $sessionid,
@@ -381,7 +381,7 @@ class WswClient
             return;
         }
         try {
-            $dir1 = 'wsw_log';
+            $dir1 = $this->conf['log_f_path'] . 'wsw_log';
             if (!is_dir($dir1)) {
                 mkdir($dir1, 0777, true);
             }
