@@ -107,6 +107,42 @@ class Member
     public string $hyYhkXm;
 
     /**
+     * 会员有效时间（如：2099-12-31）
+     * @var string
+     */
+    public string $hyyxqz;
+
+    /**
+     * 是否转临时税务登记（Y 是  N 为否）为Y才能录入
+     * @var string
+     */
+    public string $sfzlsswdj;
+
+    /**
+     * 办税人员姓名
+     * @var string
+     */
+    public string $hyBsryxm;
+
+    /**
+     * 办税人员证件类型
+     * @var string
+     */
+    public string $hyBsryzjlx;
+
+    /**
+     * 办税人员证件号码
+     * @var string
+     */
+    public string $hyBsryzjhm;
+
+    /**
+     * 办税人员移动电话
+     * @var string
+     */
+    public string $hyBsryyddh;
+
+    /**
      * @param string $hyDjlx 会员登记类型（01|个人、02|个体工商户、03|个人独资企业）
      * @param string $hyJydd 会员经营地点
      * @param string $operateZt 状态（01-新增、02-变更、03-注销）
@@ -126,6 +162,12 @@ class Member
      * @param string $hyYhkKhyh 会员银行卡开户银行
      * @param string $hyYhkYhmc 会员开户银行名称
      * @param string $hyYhkXm 会员银行开户姓名
+     * @param string $hyyxqz 会员有效时间（如：2099-12-31）
+     * @param string $sfzlsswdj 是否转临时税务登记（Y 是  N 为否）为Y才能录入
+     * @param string $hyBsryxm 办税人员姓名
+     * @param string $hyBsryzjlx 办税人员证件类型
+     * @param string $hyBsryzjhm 办税人员证件号码
+     * @param string $hyBsryyddh 办税人员移动电话
      */
     public function __construct(
         string $hyDjlx = '',
@@ -146,7 +188,13 @@ class Member
         string $hyYhkKh = '',
         string $hyYhkKhyh = '',
         string $hyYhkYhmc = '',
-        string $hyYhkXm = ''
+        string $hyYhkXm = '',
+        string $hyyxqz = '',
+        string $sfzlsswdj = '',
+        string $hyBsryxm = '',
+        string $hyBsryzjlx = '',
+        string $hyBsryzjhm = '',
+        string $hyBsryyddh = ''
     )
     {
         $this->hyDjlx      = $hyDjlx;
@@ -168,6 +216,13 @@ class Member
         $this->hyYhkKhyh   = $hyYhkKhyh;
         $this->hyYhkYhmc   = $hyYhkYhmc;
         $this->hyYhkXm     = $hyYhkXm;
+        $this->hyyxqz      = $hyyxqz;
+        $this->sfzlsswdj   = $sfzlsswdj;
+        $this->hyBsryxm    = $hyBsryxm;
+        $this->hyBsryzjlx  = $hyBsryzjlx;
+        $this->hyBsryzjhm  = $hyBsryzjhm;
+        $this->hyBsryyddh  = $hyBsryyddh;
+
     }
 
     /**
@@ -185,6 +240,12 @@ class Member
      * @param string $openBank 开户行
      * @param string $businessLocation 经营地址
      * @param string $businessScope 经营范围
+     * @param string $hyyxqz 会员有效时间（如：2099-12-31）
+     * @param string $sfzlsswdj 是否转临时税务登记（Y 是  N 为否）为Y才能录入
+     * @param string $hyBsryxm 办税人员姓名
+     * @param string $hyBsryzjlx 办税人员证件类型
+     * @param string $hyBsryzjhm 办税人员证件号码
+     * @param string $hyBsryyddh 办税人员移动电话
      * @return Member
      */
     public static function create(
@@ -200,7 +261,13 @@ class Member
         string $bankName,
         string $openBank,
         string $businessLocation,
-        string $businessScope
+        string $businessScope,
+        string $hyyxqz = '',
+        string $sfzlsswdj = '',
+        string $hyBsryxm = '',
+        string $hyBsryzjlx = '',
+        string $hyBsryzjhm = '',
+        string $hyBsryyddh = ''
     ): Member
     {
         return new Member(
@@ -221,7 +288,13 @@ class Member
             $bankNum,
             $bankName,
             $openBank,
-            $name
+            $name,
+            $hyyxqz,
+            $sfzlsswdj,
+            $hyBsryxm,
+            $hyBsryzjlx,
+            $hyBsryzjhm,
+            $hyBsryyddh,
         );
     }
 

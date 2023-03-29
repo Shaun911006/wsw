@@ -96,6 +96,13 @@ class WswClient
     public const ERROR_BUSINESS = 401;
 
     /**
+     * 最近一次返回信息，调试用
+     *
+     * @var array
+     */
+    public $lastRes;
+
+    /**
      * @param array $conf 配置
      * @throws SoapFault
      */
@@ -254,7 +261,7 @@ class WswClient
      * @return bool
      * @throws WswException
      */
-    public function hyxxbg($code, string $sessionid, array $members): bool
+    public function hyxxbg($code, string $sessionid, array $members, $debug = false): bool
     {
         $content = json_encode([
             'sessionid' => $sessionid,
@@ -271,6 +278,9 @@ class WswClient
             ->buildXml();
 
         $res = $this->getResFromJson($bizXml);
+        if ($debug) {
+            $this->lastRes = $res;
+        }
         return $res['body']['successFlag'] ?? false;
     }
 
