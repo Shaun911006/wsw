@@ -26,7 +26,11 @@ try {
         'log_f_path'               => '',
         'member_business_location' => '',
         'member_business_scope'    => '',
-        'client_num'               => '' //客户端编号 11位
+        'client_num'               => '', //客户端编号 11位
+        'hybsryxm'                 => '',
+        'hybsryzjlx'               => '',
+        'hybsryzjhm'               => '',
+        'hybsryyddh'               => '',
     ];
 
     $code = 4; //顺序号
@@ -51,7 +55,14 @@ try {
         '光大银行',
         '中国光大银行股份有限公司廊坊金光道支行',
         $conf['member_business_location'],
-        $conf['member_business_scope']
+        $conf['member_business_scope'],
+        '2099-12-31',
+        'Y',
+        $conf['hybsryxm'],
+        $conf['hybsryzjlx'],
+        $conf['hybsryzjhm'],
+        $conf['hybsryyddh'],
+
     );
 
     $memberAddRes = $wsw->hyxxbg($code++, $sessionId, [$member->toArray()]);
